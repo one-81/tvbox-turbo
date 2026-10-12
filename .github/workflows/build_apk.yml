@@ -1,0 +1,48 @@
+name: Compilar APK TV Box Turbo
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar Código do Repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar Java 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Configurar Gradle
+      uses: gradle/actions/setup-gradle@v3
+
+    - name: Compilar o APK Android
+      run: |
+        gradle assembleDebug --stacktrace
+
+    - name: Salvar APK nos Artefatos
+      uses: actions/upload-artifact@v4
+      with:
+        name: TVBoxTurbo-Instalador
+        path: app/build/outputs/apk/debug/*.apk
+
+    - name: Publicar Release Oficial com Link Direto
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: "v1.0.0"
+        name: "TV Box Turbo - Versão Oficial 1.0.0"
+        body: "Aplicativo Oficial de Otimização e Limpeza em 3 Cliques para TV Box (MXQ, TX9, etc)."
+        draft: false
+        prerelease: false
+        files: app/build/outputs/apk/debug/*.apk
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
