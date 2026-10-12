@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TV Box Turbo</string>
+    <string name="title">⚡ TV BOX TURBO</string>
+    <string name="subtitle">Kit de Otimização e Limpeza em 3 Cliques</string>
+    <string name="btn_step1">1. LIMPAR MEMÓRIA RAM</string>
+    <string name="btn_step1_desc">Encerra processos ocultos e libera memória</string>
+    <string name="btn_step2">2. LIMPAR ARQUIVOS E CACHE</string>
+    <string name="btn_step2_desc">Apaga arquivos temporários e resíduos</string>
+    <string name="btn_step3">3. ATIVAR MODO TURBO</string>
+    <string name="btn_step3_desc">Prioriza processamento e resposta do controle</string>
+    <string name="status_ready">Status: Pronto para otimizar</string>
+    <string name="ram_status">Calculando status do sistema...</string>
+</resources>
