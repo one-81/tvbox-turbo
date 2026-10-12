@@ -22,11 +22,11 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Gerar Gradle Wrapper e Compilar o APK
-      run: |
-        gradle wrapper --gradle-version 8.2.2
-        chmod +x gradlew
-        ./gradlew assembleDebug --stacktrace
+    - name: Dar Permissão de Execução ao Gradle
+      run: chmod +x gradlew
+
+    - name: Compilar o APK Android
+      run: ./gradlew assembleDebug --stacktrace
 
     - name: Salvar APK nos Artefatos
       uses: actions/upload-artifact@v4
