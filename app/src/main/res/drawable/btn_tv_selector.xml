@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Quando focado pelo controle remoto da TV Box -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <gradient android:angle="135" android:startColor="#ff9800" android:endColor="#f44336" />
+            <corners android:radius="10dp" />
+            <stroke android:width="3dp" android:color="#ffffff" />
+        </shape>
+    </item>
+    <!-- Quando pressionado -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <gradient android:angle="135" android:startColor="#5c6bc0" android:endColor="#3949ab" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- Estado padrão normal -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient android:angle="135" android:startColor="#667eea" android:endColor="#764ba2" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</selector>
